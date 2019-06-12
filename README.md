@@ -136,7 +136,7 @@ This shows a changelog embedded in an operation. Some of the information has bee
 {
   // ...
   "paths": {
-    "/pet": {
+    "/pets": {
       "get": {
         "operationId": "findPets",
         "x-changelog": { /* ... */ }
