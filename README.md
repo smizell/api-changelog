@@ -169,7 +169,7 @@ An initial change is the first time a feature is proposed in an API description 
 - `type`: initial (string, fixed, required)
 - `status`: proposed, accepted, development, ready, deployed (enum, required)
 - `title` (string, optional)
-- `description` (string, optional) - description for the chagne in Markdown
+- `description` (string, optional) - description for the change in Markdown
 - `plannedDate` (string, optional) - date in which the change will be deployed
 - `activity` (array[[Activity Object](#activity-object)])
 
@@ -204,7 +204,7 @@ Modification can occur in an API when an area of the design is changed. These mo
 - `type`: modification (string, fixed, required)
 - `status`: proposed, accepted, development, ready, deployed (enum, required)
 - `title` (string, optional)
-- `description` (string, optional) - description for the chagne in Markdown
+- `description` (string, optional) - description for the change in Markdown
 - `plannedDjate` (string, optional) - date in which the change will be deployed
 - `breakingChange` (boolean, optional) - specifies whether or not a change will be breaking
   - Default: false
@@ -236,7 +236,7 @@ Areas of the document can be marked according to the OpenAPI specification as de
 - `type`: deprecation (string, fixed, required)
 - `status`: proposed, accepted, development, ready, deployed (enum, required)
 - `title` (string, optional)
-- `description` (string, optional) - description for the chagne in Markdown
+- `description` (string, optional) - description for the change in Markdown
 - `plannedDate` (string, optional) - date in which the change will be deployed
 - `removalDate` (string, optional) - date in which the area will be removed
 - `breaking_change` (boolean, optional) - specifies whether or not a change will be breaking
