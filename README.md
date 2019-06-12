@@ -1,4 +1,4 @@
-# API Changelog
+# API Changelog - An OpenAPI Specification Extension to Manage Change
 
 An OpenAPI document alone doesn't tell you what's been deployed. It doesn't say what's planned. It might say what's deprecated, but it doesn't say how long or when the functionality will be removed. We need something to help us here.
 
