@@ -205,7 +205,7 @@ Modification can occur in an API when an area of the design is changed. These mo
 - `status`: proposed, accepted, development, ready, deployed (enum, required)
 - `title` (string, optional)
 - `description` (string, optional) - description for the change in Markdown
-- `plannedDjate` (string, optional) - date in which the change will be deployed
+- `plannedDate` (string, optional) - date in which the change will be deployed
 - `breakingChange` (boolean, optional) - specifies whether or not a change will be breaking
   - Default: false
 - `activity` (array[[Activity Object](#activity-object)])
