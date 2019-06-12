@@ -171,7 +171,7 @@ An initial change is the first time a feature is proposed in an API description 
 - `title` (string, optional)
 - `description` (string, optional) - description for the chagne in Markdown
 - `plannedDate` (string, optional) - date in which the change will be deployed
-- `activity` (array[[Activity Object](#activity-object))
+- `activity` (array[[Activity Object](#activity-object)])
 
 ##### Example
 
@@ -206,9 +206,9 @@ Modification can occur in an API when an area of the design is changed. These mo
 - `title` (string, optional)
 - `description` (string, optional) - description for the chagne in Markdown
 - `plannedDjate` (string, optional) - date in which the change will be deployed
-- `breaking_change` (boolean, optional) - specifies whether or not a change will be breaking
+- `breakingChange` (boolean, optional) - specifies whether or not a change will be breaking
   - Default: false
-- `activity` (array[[Activity Object](#activity-object))
+- `activity` (array[[Activity Object](#activity-object)])
 
 ##### Example
 
@@ -241,7 +241,7 @@ Areas of the document can be marked according to the OpenAPI specification as de
 - `removalDate` (string, optional) - date in which the area will be removed
 - `breaking_change` (boolean, optional) - specifies whether or not a change will be breaking
   - Default: false
-- `activity` (array[[Activity Object](#activity-object))
+- `activity` (array[[Activity Object](#activity-object)])
 
 ##### Example
 
