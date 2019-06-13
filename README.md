@@ -151,6 +151,8 @@ This shows a changelog embedded in an operation. Some of the information has bee
 - `version`: 0.1 (string, required, fixed)
 - `changes` (array[[Changelog Object](#changelog-object)])
 
+#### Example
+
 ```js
 {
   "version": "0.1",
@@ -263,7 +265,7 @@ Areas of the document can be marked according to the OpenAPI specification as de
 }
 ```
 
-## Activity Object
+### Activity Object
 
 The activity object is for capturing who changed a status and which it happened. This helps to create a trail of how an area has evolved over time.
 
@@ -271,7 +273,7 @@ The activity object is for capturing who changed a status and which it happened.
 - `by` (string, optional) - an identifier for the person who made the status change
 - `date` (string, required) - date in which the activity happened
 
-### Example
+#### Example
 
 ```js
 {
