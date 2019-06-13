@@ -33,94 +33,9 @@ The states for these types of changes are:
 
 All of these states are optional depending on the teams' workflows.
 
-## Example
+## Example OpenAPI
 
-This is an example of the changelog used in an OpenAPI document. There are other examples shown throughout the specification below.
-
-```yaml
-{
-   "openapi": "3.0.0",
-   "info": {
-      "version": "1.0.0",
-      "title": "Simplified Petstore",
-   },
-   "servers": [
-      { "url": "http://petstore.swagger.io/v1" }
-   ],
-   "paths": {
-      "/pets": {
-         "get": {
-            "summary": "List all pets",
-            "x-changelog": {
-              "changes": [
-                {
-                  "type": "initial",
-                  "status": "accepted",
-                  "title": "List all pets",
-                  "description": "This change will introduce a new operation to list pets",
-                  "plannedDate": "2019-06-10",
-                  "activity": [
-                    {
-                      "statusChange": "proposed",
-                      "by": "smizell",
-                      "date": "2019-06-01"
-                    },
-                    {
-                      "statusChange": "accepted",
-                      "by": "smizell",
-                      "date": "2019-06-02"
-                    },
-                  ]
-                }
-              ]
-            }
-            "operationId": "listPets",
-            "tags": [ "pets" ],
-            "responses": {
-               "200": {
-                  "description": "A paged array of pets",
-                  "content": {
-                     "application/json": {
-                        "schema": {
-                           "$ref": "#/components/schemas/Pets"
-                        }
-                     }
-                  }
-               }
-            }
-         }
-      }
-   },
-   "components": {
-      "schemas": {
-         "Pet": {
-            "required": [
-               "id",
-               "name"
-            ],
-            "properties": {
-               "id": {
-                  "type": "integer",
-                  "format": "int64"
-               },
-               "name": {
-                  "type": "string"
-               },
-               "tag": {
-                  "type": "string"
-               }
-            }
-         },
-         "Pets": {
-            "type": "array",
-            "items": {
-               "$ref": "#/components/schemas/Pet"
-            }
-         }
-      }
-   }
-}
-```
+For an example OpenAPI using this extension, please view the [example file](./example-openapi.json).
 
 ## Specification
 
