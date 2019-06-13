@@ -4,7 +4,7 @@
 
 An OpenAPI document alone doesn't tell you what's been deployed. It doesn't say what's planned. It might say what's deprecated, but it doesn't say how long or when the functionality will be removed. We need something to help us here.
 
-API Changelog is an [OpenAPI Specification Extension](https://github.com/OAI/OpenAPI-Specification/blob/f1852bd4bd89bf96ed929179f9f52cfa6621accb/versions/3.0.0.md#specification-extensions) for describing how and when your API will change. It's meant to capture plans and changes so you can generate changelogs, communicate future features to consumers, show what's been deployed to production, and improve the design overall process.
+API Changelog is an [OpenAPI Specification Extension](https://github.com/OAI/OpenAPI-Specification/blob/f1852bd4bd89bf96ed929179f9f52cfa6621accb/versions/3.0.0.md#specification-extensions) for describing how and when your API will change. It's meant to capture plans and changes so you can generate changelogs, communicate future features to consumers, show what's been deployed to production, and improve the overall design process.
 
 ## Overview
 
