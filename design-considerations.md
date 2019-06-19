@@ -50,7 +50,9 @@ I want to address questions and concerns that arise along the way.
 
 ### "This shouldn't be part of the contract."
 
-The point of this extension is to capture information about how an API description changes over time. It isn't intended to be part of the contract. However, it is meant to live alongside other API information as part of the API description. Tools can remove information around this changelog to ensure this information is part of a defined contract with consumers.
+The point of this extension is to capture information about how an API description changes over time. It isn't intended to be part of the contract. However, it is meant to live alongside other API information as part of the API description. Tools can remove information around this changelog to ensure this information isn't part of a defined contract with consumers.
+
+Tools can also remove features that are planned though not implemented. This could be a valuable feature. There could be a single source of truth that contains a lot of releveant information around an API, and tools could generate OpenAPI documents or documentation depending on the context. For public, the tooling may strip out all of the planned features. For internal, it may include everything. This is left up to tooling designers.
 
 ### "How does this relate to the deprecation and sunset RFCs?"
 
