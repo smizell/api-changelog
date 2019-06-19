@@ -6,6 +6,14 @@ An OpenAPI document alone doesn't tell you what's been deployed. It doesn't say 
 
 API Changelog is an [OpenAPI Specification Extension](https://github.com/OAI/OpenAPI-Specification/blob/f1852bd4bd89bf96ed929179f9f52cfa6621accb/versions/3.0.0.md#specification-extensions) for describing how and when your API will change. It's meant to capture plans and changes so you can generate changelogs, communicate future features to consumers, show what's been deployed to production, and improve the overall design process.
 
+
+## Resources
+
+There are additional resources for reading to go beyond the overview and specification below.
+
+- [Design Considerations](./design-considerations.md) - a more in-depth look at why some of the decisions were made and how this extension is intended to be used
+- [Example OpenAPI Document](./example-openapi.json) - a simple example of how this extension might be used
+
 ## Overview
 
 The API Changelog extension focuses on three main areas of the OpenAPI document.
@@ -32,10 +40,6 @@ The states for these types of changes are:
 1. **deployed** - the change has been deployed into production
 
 All of these states are optional depending on the teams' workflows.
-
-## Example OpenAPI
-
-For an example OpenAPI using this extension, please view the [example file](./example-openapi.json).
 
 ## Specification
 
