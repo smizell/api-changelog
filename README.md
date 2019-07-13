@@ -43,8 +43,6 @@ All of these states are optional depending on the teams' workflows.
 
 ## Specification
 
-This specification uses [MSON](https://github.com/apiaryio/mson/blob/master/MSON%20Specification.md) as a way to describe the JSON for the specification extension.
-
 ### Field Name
 
 The field name to use for the extension is `x-changelog`.
@@ -203,3 +201,7 @@ The activity object is for capturing who changed a status and which it happened.
   "date": "2019-06-01"
 }
 ```
+
+## About This Specification
+
+This specification uses [MSON](https://github.com/apiaryio/mson/blob/master/MSON%20Specification.md) as a way to describe the JSON for the specification extension. It also uses [RFC 2119](https://tools.ietf.org/html/rfc2119) to indicate requirements.
