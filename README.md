@@ -16,13 +16,16 @@ There are additional resources for reading to go beyond the overview and specifi
 
 ## Overview
 
-The API Changelog extension focuses on three main areas of the OpenAPI document.
+The API Changelog extension focuses on the following areas of the OpenAPI document.
 
+1. [OpenAPI Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#oasObject)
 1. [Operation Object](https://github.com/OAI/OpenAPI-Specification/blob/f1852bd4bd89bf96ed929179f9f52cfa6621accb/versions/3.0.0.md#operationObject)
 1. [Parameter Object](https://github.com/OAI/OpenAPI-Specification/blob/f1852bd4bd89bf96ed929179f9f52cfa6621accb/versions/3.0.0.md#parameterObject)
 1. [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/f1852bd4bd89bf96ed929179f9f52cfa6621accb/versions/3.0.0.md#schemaObject)
 
-These are the main areas where an API can evolve. There are three types of ways change can be communicated for these areas.
+These are the main areas where an API can evolve. The changelog for the root OpenAPI Object can be used to express API-wide changes that may not be easily reflected in other changelog areas. Examples of changes at the root level might be deprecating a specific version of TLS, adding rate limiting or throttling, or expressing a general change that affects many operations. This specification doesn't force a specific kind of change, but rather gives shape and meaning to any kind of change an API may go through.
+
+The different types of change are listed below. These changes can be used through the API lifecycle to not only communicate what changes, but the way in which it's changing.
 
 1. **Initial** - this is the initial design of the area in which the extension is found
 1. **Modification** - this is a change for an area that has already been deployed
@@ -45,7 +48,7 @@ All of these states are optional depending on the teams' workflows.
 
 ### Field Name
 
-The field name to use for the extension is `x-changelog`.
+The field name to use for the extension is `x-changelog`. This field can be used in the OpenAPI Object, Operation Object, Parameter Object, or Schema Object. The value of this field MUST be an [Extension Object](#extension-object).
 
 #### Example
 
@@ -67,8 +70,12 @@ This shows a changelog embedded in an operation. Some of the information has bee
 
 ### Extension Object
 
-- `version`: 0.1 (string, required, fixed)
-- `changes` (array[[Changelog Object](#changelog-object)])
+- One of
+  - (object)
+    - `$ref` - external reference to an Extension Object. The referenced structure MUST be an Extension Object.
+  - (object)
+    - `version`: 0.1 (string, required, fixed)
+    - `changes` (array[[Changelog Object](#changelog-object)])
 
 #### Example
 
@@ -91,6 +98,7 @@ An initial change is the first time a feature is proposed in an API description 
 - `status`: proposed, accepted, development, ready, deployed (enum, required)
 - `title` (string, optional)
 - `description` (string, optional) - description for the change in Markdown
+- `announcement` (string, optional) - public description of the change in Markdown
 - `plannedDate` (string, optional) - date in which the change will be deployed
 - `activity` (array[[Activity Object](#activity-object)])
 
@@ -126,6 +134,7 @@ Modification can occur in an API when an area of the design is changed. These mo
 - `status`: proposed, accepted, development, ready, deployed (enum, required)
 - `title` (string, optional)
 - `description` (string, optional) - description for the change in Markdown
+- `announcement` (string, optional) - public description of the change in Markdown
 - `plannedDate` (string, optional) - date in which the change will be deployed
 - `breakingChange` (boolean, optional) - specifies whether or not a change will be breaking
   - Default: false
@@ -158,6 +167,7 @@ Areas of the document can be marked according to the OpenAPI specification as de
 - `status`: proposed, accepted, development, ready, deployed (enum, required)
 - `title` (string, optional)
 - `description` (string, optional) - description for the change in Markdown
+- `announcement` (string, optional) - public description of the change in Markdown
 - `plannedDate` (string, optional) - date in which the change will be deployed
 - `removalDate` (string, optional) - date in which the area will be removed
 - `breaking_change` (boolean, optional) - specifies whether or not a change will be breaking
@@ -201,6 +211,17 @@ The activity object is for capturing who changed a status and which it happened.
   "date": "2019-06-01"
 }
 ```
+
+## Conflict With Deprecated Field
+
+The OpenAPI specification provides a `deprecated` field that can be used in various places throughout an API description document. The purpose of this API Changelog Extension is to augment that field rather than replace it.
+
+However, there is a situation where a conflict may arise. If a changelog activity reflects a deprecation without setting this `deprecated` field, how should the tooling interpret it? The following suggestions are made:
+
+- If the tooling supports both the API Changelog Extension and the `deprecated` field, the tooling SHOULD consider the item deprecated
+- If the tooling does not support the API Changelog Extension, the tooling SHOULD rely on the `deprecated` field
+
+These are suggestions. Tooling authors are free to handle the conflict however they choose.
 
 ## About This Specification
 
