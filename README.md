@@ -70,6 +70,8 @@ This shows a changelog embedded in an operation. Some of the information has bee
 
 ### Extension Object
 
+The Extension Object is the root object used to define API changes. It allows for embedding directly in the document or for external references by way of the `$ref` field. If it's external, it should follow all of the rules for `$ref` as defined in the OpenAPI specification.
+
 - One of
   - (object)
     - `$ref` - external reference to an Extension Object. The referenced structure MUST be an Extension Object.
