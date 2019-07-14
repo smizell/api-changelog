@@ -13,6 +13,7 @@ There are additional resources for reading to go beyond the overview and specifi
 
 - [Design Considerations](./design-considerations.md) - a more in-depth look at why some of the decisions were made and how this extension is intended to be used
 - [Example OpenAPI Document](./example-openapi.json) - a simple example of how this extension might be used
+- [Use Cases](./use-cases.md) - reasons as to why this extension might be useful to you and your team
 
 ## Overview
 
