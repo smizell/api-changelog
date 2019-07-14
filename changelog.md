@@ -2,7 +2,7 @@
 
 A changelog for a changelog extension. Trying to walk the walk.
 
-## Draft 02 (2019-07-13)
+## 2019-07-13
 
 - Added a [Use Case](./use-cases.md) document to share why this might be valuable to you.
 - Added support for `$ref`. Changelog information can be separate from the API description but linked by way of a `$ref`.
