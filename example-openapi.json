@@ -33,7 +33,7 @@
                   ]
                 }
               ]
-            }
+            },
             "operationId": "listPets",
             "tags": [ "pets" ],
             "responses": {
